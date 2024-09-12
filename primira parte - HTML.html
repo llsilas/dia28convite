@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convite para um Date - Enrolados</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="lanterns">
+            <h1>Quer ir a um date comigo?</h1>
+            <h2>Te prometo varias risadas, de mim possivelmente heheh</h2>
+            <p>Dia 28.09!</p>
+            <div class="buttons">
+                <button onclick="aceitarConvite()">Sim, aceito!</button>
+                <button id="nao-btn" onmouseover="moverBotao(10)">Não, talvez outro dia...</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function aceitarConvite() {
+            alert("ESTAREI CONTANDO OS MINUTOS");
+        }
+
+        function moverBotao() {
+            const botaoNao = document.getElementById("nao-btn");
+            const larguraJanela = window.innerWidth;
+            const alturaJanela = window.innerHeight;
+
+            const novaPosicaoX = Math.floor(Math.random() * (larguraJanela - botaoNao.offsetWidth));
+            const novaPosicaoY = Math.floor(Math.random() * (alturaJanela - botaoNao.offsetHeight));
+
+            botaoNao.style.position = "absolute";
+            botaoNao.style.left = novaPosicaoX + "px";
+            botaoNao.style.top = novaPosicaoY + "px";
+        }
+    </script>
+</body>
+</html>
